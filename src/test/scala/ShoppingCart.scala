@@ -3,6 +3,10 @@ package hmrc.exercise
 object ShoppingCart {
 
     def calcTotalPrice(shoppingList: String*) = {
-        2.05
+        shoppingList.map {
+                case "Apple" => 0.60
+                case "Orange" => 0.25
+                case _ => throw new Exception("Invalid Product") 
+        }.sum
     }
 }
