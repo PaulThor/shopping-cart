@@ -1,4 +1,4 @@
-package hmrc.exercise
+package main.scala
 
 object ShoppingCart {
 

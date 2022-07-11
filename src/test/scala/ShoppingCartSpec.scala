@@ -1,7 +1,7 @@
-package hmrc.exercise
+package test.scala
 
 import org.scalatest._
-import hmrc.exercise.ShoppingCart
+import main.scala.ShoppingCart
 
 class ShoppingCartSpec extends wordspec.AnyWordSpec {
 
