@@ -28,7 +28,7 @@ class ShoppingCartSpec extends wordspec.AnyWordSpec {
 
   "Shopping cart with discount calculation" should {
 
-    "calculate 0 apples" in {
+    "calculate 0 items" in {
       val totalPrice = ShoppingCart.calcTotalPriceWithDiscount()
       assert(totalPrice == 0.0)
     }
