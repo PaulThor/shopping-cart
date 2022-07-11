@@ -55,13 +55,19 @@ class ShoppingCartSpec extends wordspec.AnyWordSpec {
 
     "calculate 3 oranges" in {
       val totalPrice = ShoppingCart.calcTotalPriceWithDiscount("Orange", "Orange", "Orange")
-      assert(totalPrice == 0.25)
+      assert(totalPrice == 0.50)
     }
 
     "calculate 4 oranges" in {
       val totalPrice = ShoppingCart.calcTotalPriceWithDiscount("Orange", "Orange", "Orange", "Orange")
-      assert(totalPrice == 0.25)
+      assert(totalPrice == 0.75)
     }
+
+    "calculate a mixture of products" in {
+      val totalPrice = ShoppingCart.calcTotalPriceWithDiscount("Apple", "Orange", "Orange", "Apple", "Orange", "Orange", "Apple")
+      assert(totalPrice == 1.95)
+    }
+
 
   } 
 }

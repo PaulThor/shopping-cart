@@ -13,17 +13,17 @@ object ShoppingCart {
     def calcTotalPriceWithDiscount(shoppingList: String*) = {
 
         calcDiscount(
-            shoppingList.filter(_ match { case "Apple" => true case _ => false }).size,
             2,
-            0.6) +
+            1,
+            0.6,
+            shoppingList.filter(_ match { case "Apple" => true case _ => false }).size) +
         calcDiscount(
-            shoppingList.filter(_ match { case "Orange" => true case _ => false }).size,
-            3,
-            0.25)
+            3, 
+            2, 
+            0.25, 
+            shoppingList.filter(_ match { case "Orange" => true case _ => false }).size
+        )
     }
 
-    def calcDiscount(quantity: Int, mod: Int, price: BigDecimal) = {
-         val eq = (quantity + 1) - ((quantity + 1) % mod)
-        (eq / mod * price)
-    }
+    def calcDiscount(n : Int, m : Int, cost: BigDecimal, totalItem : Int) : BigDecimal = cost * (totalItem / n * m + totalItem % n)
 }
